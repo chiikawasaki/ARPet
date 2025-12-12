@@ -1,0 +1,32 @@
+# Unity Standard
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+/[Uu]ser[Ss]ettings/
+
+# IDE specific (Visual Studio / Rider)
+/.idea/
+/*.sln
+/*.csproj
+/*.unityproj
+
+# Build Results & Junk (Android / Mac)
+/*.apk
+/*.aab
+/*.unitypackage
+/*.app
+/Build/
+/.utmp/
+/*_BurstDebugInformation_DoNotShip/
+
+# Crash logs
+sysinfo.txt
+*.stacktrace
+mono_crash.*
+
+# Misc (Root only)
+/*.dll

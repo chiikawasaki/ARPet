@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 271f0d6695193b041958d9fe17f5839c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 247648
+  packageName: DOG Full Animations - Welsh Corgi
+  packageVersion: 1.0
+  assetPath: Assets/Dog_WelshCorgi/Animator/WelshCorgi_3.controller
+  uploadId: 564491
