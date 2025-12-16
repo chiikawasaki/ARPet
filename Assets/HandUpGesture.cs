@@ -63,7 +63,10 @@ public class HandUpGesture : MonoBehaviour
 
         // グー判定
         bool isFist = FistState != null && FistState.Active;
-
+        if (isFist) {
+            Debug.Log("✊✊✊✊✊グーになったよ✊✊✊✊✊");
+            Debug.Log("はやさ：" + velocity.y);
+        }
         if (isFist && velocity.y > requiredSpeed)
         {
             Debug.Log($"おすわり指令！ Speed: {velocity.y:F2}");

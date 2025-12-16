@@ -14,27 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shapeName: Goo
   _thumbFeatureConfigs:
-    _value:
-    - _mode: 0
-      _feature: 0
-      _state: 1
+    _value: []
   _indexFeatureConfigs:
     _value:
-    - _mode: 0
+    - _mode: 1
       _feature: 0
-      _state: 2
+      _state: 0
   _middleFeatureConfigs:
     _value:
-    - _mode: 0
+    - _mode: 1
       _feature: 0
-      _state: 2
+      _state: 0
   _ringFeatureConfigs:
     _value:
-    - _mode: 0
+    - _mode: 1
       _feature: 0
-      _state: 2
+      _state: 0
   _pinkyFeatureConfigs:
     _value:
-    - _mode: 0
+    - _mode: 1
       _feature: 0
-      _state: 2
+      _state: 0

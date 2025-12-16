@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Samples/Meta XR Interaction \u200BSDK/77.0.0/Example Scenes/HandGrabExamples.unity"
     guid: 39ae0e546b9edc0408d3b11c6a7c2814
+  - enabled: 1
+    path: Assets/Scenes/Intaraction.unity
+    guid: beb3783b94d1b43e4a8924a890a1fa19
+  - enabled: 1
+    path: Assets/Scenes/Play.unity
+    guid: a35e597cc180d429aba2f9d1c81b5822
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: ff0627abff552492999eda753ad7e549, type: 2}
