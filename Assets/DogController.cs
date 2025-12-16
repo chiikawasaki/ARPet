@@ -19,4 +19,20 @@ public class DogController : MonoBehaviour
             Debug.Log("犬：わん！（座ったよ）");
         }
     }
+    public void Confused()
+    {
+        if (_animator != null)
+        {
+            _animator.SetTrigger("ConfusedTrigger");
+            Debug.Log("犬：わん！（混乱したよ）");
+        }
+    }
+    public void Refuse()
+    {
+        if (_animator != null)
+        {
+            _animator.SetTrigger("RefuseTrigger");
+            Debug.Log("犬：わん！（拒否したよ）");
+        }
+    }
 }

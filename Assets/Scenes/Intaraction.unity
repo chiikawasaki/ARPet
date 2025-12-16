@@ -5883,6 +5883,7 @@ MonoBehaviour:
   _hand: {fileID: 1528232930}
   requiredSpeed: 0.8
   cooldownTime: 1
+  productionApiUrl: http://localhost:8000/pet/production
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
