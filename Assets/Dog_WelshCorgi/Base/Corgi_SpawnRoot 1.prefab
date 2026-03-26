@@ -728,6 +728,8 @@ MonoBehaviour:
   cooldownTime: 1
   eatDistance: 0.6
   waitTimeBeforeEat: 1
+  trainApiUrl: http://localhost:8000/pet/train
+  enableLogging: 1
 --- !u!114 &1531940704701959199
 MonoBehaviour:
   m_ObjectHideFlags: 0

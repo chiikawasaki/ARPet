@@ -2536,7 +2536,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2552,7 +2552,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &871263450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2631,7 +2631,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 92720ce9fa81747ecbb0f91a5e655c3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2670,7 +2670,7 @@ Transform:
   m_GameObject: {fileID: 528494119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99913555, z: -0, w: 0.041572224}
-  m_LocalPosition: {x: 0, y: 1, z: 0.4}
+  m_LocalPosition: {x: 0.23, y: 1, z: 0.42}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4541,6 +4541,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450063200}
   m_CullTransparentMesh: 1
+--- !u!1001 &1509603368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275968683073850657, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462686242364584574, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
+      propertyPath: m_Name
+      value: GameManeger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e96e32b38dc504e46ab7123049fd0f02, type: 3}
 --- !u!1 &1527687623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5742,6 +5799,7 @@ MonoBehaviour:
   _hand: {fileID: 389369344}
   requiredSpeed: 0.1
   cooldownTime: 1
+  productionApiUrl: http://localhost:8000/pet/production
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5761,3 +5819,4 @@ SceneRoots:
   - {fileID: 2660752703160966328}
   - {fileID: 789193819}
   - {fileID: 1328278797}
+  - {fileID: 1509603368}

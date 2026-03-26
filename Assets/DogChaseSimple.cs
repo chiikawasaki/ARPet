@@ -111,7 +111,7 @@ public class DogChaseSimple : MonoBehaviour
 
         // ===== 投球検出 =====
         bool nowThrown = (Time.time >= ignoreThrowUntil) && (ballRb.linearVelocity.magnitude > throwThreshold);
-        if (nowThrown)
+        if (nowThrown && !ballWasThrown) // 投球は1回だけカウント
         {
             ballWasThrown = true;
 
@@ -122,6 +122,12 @@ public class DogChaseSimple : MonoBehaviour
 
             // 到達後の抑止を解除
             arrivedCoolDown = false;
+
+            // ★ GameManagerに投球を通知してエネルギーを更新
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnBallThrown();
+            }
         }
 
         // ===== 追跡開始判定（ボールがほぼ停止して地面付近にある想定） =====
@@ -184,6 +190,7 @@ public class DogChaseSimple : MonoBehaviour
 
                 // 口から落として手元に置く
                 DropBall();
+
             }
         }
 

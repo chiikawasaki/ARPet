@@ -519,10 +519,8 @@ GameObject:
   - component: {fileID: 6284458456786503042}
   - component: {fileID: 8664266195222811906}
   - component: {fileID: 3387193412877080348}
-  - component: {fileID: 5483729687383660195}
-  - component: {fileID: 3988239771837398430}
-  - component: {fileID: 743595927446742805}
   - component: {fileID: 1531940704701959199}
+  - component: {fileID: 7498718339630024837}
   m_Layer: 7
   m_Name: WelshCorgi
   m_TagString: Untagged
@@ -543,6 +541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3594825178644436740}
   - {fileID: 5056816873134206847}
   - {fileID: 7731302627866642583}
   m_Father: {fileID: 8299814821160062048}
@@ -617,117 +616,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5483729687383660195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3141260246325462271}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5bd2d5e0114344a2a6c61b277351663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 3387193412877080348}
-  tailLayerIndex: 1
-  catalog:
-  - action: 0
-    weight: 8
-    minDur: 3
-    maxDur: 5
-    cooldown: 0.4
-    nextOkTime: 0
-  - action: 1
-    weight: 1
-    minDur: 2
-    maxDur: 4
-    cooldown: 1
-    nextOkTime: 0
-  - action: 2
-    weight: 1
-    minDur: 2
-    maxDur: 4
-    cooldown: 1
-    nextOkTime: 0
-  - action: 3
-    weight: 0.25
-    minDur: 1
-    maxDur: 2.2
-    cooldown: 6
-    nextOkTime: 0
-  - action: 4
-    weight: 0.25
-    minDur: 2
-    maxDur: 4
-    cooldown: 3
-    nextOkTime: 0
-  - action: 5
-    weight: 0
-    minDur: 2
-    maxDur: 4
-    cooldown: 14
-    nextOkTime: 0
-  - action: 6
-    weight: 0
-    minDur: 0.6
-    maxDur: 1.2
-    cooldown: 7
-    nextOkTime: 0
-  wagNoiseSpeed: 0.12
-  wagBase: 0.35
-  wagAmp: 0.45
-  walkForwardSpeed: 0.6
-  runForwardSpeed: 1.2
-  lookAroundInterval: {x: 2.5, y: 5}
-  lookAroundAngle: {x: -60, y: 60}
-  lookAroundDuration: {x: 0.35, y: 0.9}
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  probeLength: 1.2
-  probeRadius: 0.12
-  eyeHeight: 0.25
-  maxTurnDegPerSec: 300
-  debugAvoidance: 1
-  debugRayColor: {r: 1, g: 0, b: 0, a: 1}
-  debugHitColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  usePlanner: 1
-  plannerUrl: http://localhost:8000/pet/plan
-  plannerHz: 0.5
-  httpTimeoutSec: 3
---- !u!114 &3988239771837398430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3141260246325462271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f302bf81aa248ff84058f9e6e1e121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &743595927446742805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3141260246325462271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04dbc922c72a4bfba029c78f8604440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snack: {fileID: 0}
-  dogHead: {fileID: 2367819325353057861}
-  dogAnimator: {fileID: 3387193412877080348}
-  detectDistance: 6
-  upwardSpeedThreshold: 1
-  cooldownTime: 1
-  eatDistance: 0.6
-  waitTimeBeforeEat: 1
 --- !u!114 &1531940704701959199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,6 +628,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3301c4692ac8746eaba41c5d54fde998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7498718339630024837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141260246325462271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de23515412cba451ea1c1b4b20638b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballTag: Ball
+  speed: 2
+  stopDistance: 0.5
+  throwThreshold: 0.5
+  arriveCooldownSec: 0.6
+  mouthPoint: {fileID: 3594825178644436740}
+  mouthLocalPosOffset: {x: 0, y: 0, z: 0.08}
+  mouthLocalEulerOffset: {x: 0, y: 0, z: 0}
+  deliverDistance: 0.7
+  autoDropDistanceFromMouth: 0.2
+  animator: {fileID: 3387193412877080348}
+  ignoreAfterDogDropSec: 0.8
 --- !u!1 &3182816445077644002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +1865,37 @@ Transform:
   m_Children:
   - {fileID: 7483312270946046780}
   m_Father: {fileID: 3721926272790972725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7606494755149381163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3594825178644436740}
+  m_Layer: 0
+  m_Name: mouthPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3594825178644436740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606494755149381163}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.364, z: 0.744}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2367819325353057861}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7854578328982710768
 GameObject:

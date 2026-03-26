@@ -39,16 +39,22 @@ public class HandUpGesture : MonoBehaviour
 
     void Update()
     {
-        // 犬がまだ見つかっていないなら、毎フレーム探しに行く
-        if (_dog == null)
+        
+        // 犬、またはAnimatorのどちらかが欠けていたら探しに行く
+        if (_dog == null || _animator == null)
+        {
+            _dog = FindObjectOfType<DogController>();
+            
+            // 犬が見つかったら、その子供からAnimatorを探す
+            if (_dog != null)
             {
-                _dog = FindObjectOfType<DogController>();
-                _animator = _dog.GetComponent<Animator>();
-            // まだ見つからないなら、ハンドトラッキング処理もせず一旦帰る
-            if (_dog == null) return;
+                _animator = _dog.GetComponentInChildren<Animator>();
+            }
 
-            // 見つかった瞬間だけログを出す
-            Debug.Log("🐕 犬が出現しました！追跡を開始します！");
+            // どちらか片方でも欠けていたら、まだ準備完了ではないのでリターン
+            if (_dog == null || _animator == null) return;
+
+            Debug.Log("🐕 犬とAnimatorの追跡を開始します！");
         }
 
         if (Hand == null || !Hand.IsTrackedDataValid) return;
@@ -137,26 +143,33 @@ public class HandUpGesture : MonoBehaviour
     // 犬のリアクションを受け取って、アニメーション実行
     void HandleDogReaction(string reaction)
     {
-        if(_dog == null){
-            Debug.Log("犬が見つかりません");
+        if (_dog == null || _animator == null)
+        {
+            Debug.LogError("犬、またはAnimatorが見つかりません");
             return;
         }
+
         Debug.Log("犬のリアクション：" + reaction);
-        switch(reaction){
+
+        // Play() ではなく SetTrigger() を使用する
+        switch (reaction)
+        {
             case "sit":
-                _dog.Sit();
+                // もしDogController側にSit処理があるならそちらを優先しても良いが、
+                // アニメーション制御をここで統一するならTriggerを引く
+                _animator.SetTrigger("SitTrigger"); 
                 break;
+
             case "fail":
-                // _dog.Confused();
-                _animator.Play("Confused", 0, 0.0f);
+                _animator.SetTrigger("ConfusedTrigger");
                 break;
+
             case "tired":
-                // _dog.Refuse();
-                _animator.Play("Refuse", 0, 0.0f);
+                _animator.SetTrigger("RefuseTrigger");
                 break;
+
             default:
-                // _dog.Confused();
-                _animator.Play("Confused", 0, 0.0f);
+                _animator.SetTrigger("ConfusedTrigger");
                 break;
         }
     }

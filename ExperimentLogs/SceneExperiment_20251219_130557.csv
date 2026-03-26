@@ -1,0 +1,7 @@
+﻿TrainingCount,Proficiency,SuccessRate,ValidTrials,ErrorCount
+0,0,0,8,2
+20,18.87,0,10,0
+40,35.39,0,10,0
+60,56.32898,100,10,0
+80,71.23898,100,10,0
+100,82.09399,100,10,0
