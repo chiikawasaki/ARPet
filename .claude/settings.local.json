@@ -1,8 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "mcp__notion__notion-fetch",
-      "mcp__notion__notion-update-page"
+      "Bash(do if ! grep -q \"Root\" \"$f\")",
+      "Bash(then echo \"NO Root: $f\")"
     ],
     "deny": [],
     "ask": []

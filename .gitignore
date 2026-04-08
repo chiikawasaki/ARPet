@@ -29,4 +29,4 @@ sysinfo.txt
 mono_crash.*
 
 # Misc (Root only)
-/*.dll
+/*.dll.claude.json

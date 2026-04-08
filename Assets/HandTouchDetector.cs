@@ -6,6 +6,8 @@ public class HandTouchDetector : MonoBehaviour
 {
     private bool _isTouching = false;
     private Animator _animator;
+    private Coroutine _patTimerCoroutine;
+    private bool _isPatting = false;
 
     void Start()
     {
@@ -42,26 +44,39 @@ public class HandTouchDetector : MonoBehaviour
         }
     }
 
-    private bool IsHandObject(GameObject obj)
-    {
-        // LeftInteractionsの子オブジェクトかチェック
-        var leftInteractions = GameObject.Find("LeftInteractions");
-        if (leftInteractions != null)
-        {
-            return obj.transform.IsChildOf(leftInteractions.transform);
-        }
-        return false;
-    }
+   private bool IsHandObject(GameObject obj)
+   {
+       // 左手の子オブジェクトかチェック
+       var left = GameObject.Find("LeftInteractions");
+       if (left != null && obj.transform.IsChildOf(left.transform))
+       {
+           return true;
+       }
+
+       // 右手の子オブジェクトかチェック
+       var right = GameObject.Find("RightInteractions");
+       if (right != null && obj.transform.IsChildOf(right.transform))
+       {
+          return true;
+       }
+    return false;
+   }
 
     private void OnTouchStart()
     {
         Debug.Log("撫で動作開始");
         
-        // Patアニメーション再生
         if (_animator != null)
         {
-            _animator.Play("pat");
-            Debug.Log("🐕 Patアニメーション再生！");
+            _animator.Play("PatChest"); // 胸を撫でる
+            Debug.Log("🐕 PatChestアニメーション再生！");
+            
+            // 10秒タイマー開始
+            if (_patTimerCoroutine != null)
+                StopCoroutine(_patTimerCoroutine);
+            
+            _patTimerCoroutine = StartCoroutine(PatTimer());
+            _isPatting = true;
         }
         else
         {
@@ -72,16 +87,44 @@ public class HandTouchDetector : MonoBehaviour
     private void OnTouchEnd()
     {
         Debug.Log("撫で動作終了");
+        _isPatting = false;
+        
+        // タイマー停止
+        if (_patTimerCoroutine != null)
+        {
+            StopCoroutine(_patTimerCoroutine);
+            _patTimerCoroutine = null;
+        }
         
         // Breathingアニメーション再生
         if (_animator != null)
         {
-            _animator.Play("Breathing");
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("PatLie"))
+            {
+                _animator.SetTrigger("EndPatLieTrigger");
+            }
+            else
+            {
+                _animator.Play("Breathing");
+            }
             Debug.Log("🐕 Breathingアニメーション再生！");
         }
         else
         {
             Debug.LogWarning("⚠️ Animatorが見つかりません");
+        }
+    }
+    
+    private System.Collections.IEnumerator PatTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        
+        // 10秒後、まだ撫でていたらトリガー発火
+        if (_isPatting && _animator != null)
+        {
+            _animator.SetTrigger("PatLieTrigger");
+            //ここに右撫でてる時と左撫でてる時の処理を書く
+            Debug.Log("🐕 10秒経過！PatLieトリガー発火！");
         }
     }
 }
