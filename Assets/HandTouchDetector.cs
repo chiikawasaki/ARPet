@@ -66,6 +66,14 @@ public class HandTouchDetector : MonoBehaviour
     {
         Debug.Log("撫で動作開始");
         
+        // 親密度を上げる
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.intimacy += 0.01f;
+            GameManager.Instance.intimacy = Mathf.Clamp01(GameManager.Instance.intimacy);
+            Debug.Log($"🐕 撫でてもらって親密度UP！ 現在の親密度: {GameManager.Instance.intimacy:F2}");
+        }
+        
         if (_animator != null)
         {
             _animator.Play("PatChest"); // 胸を撫でる

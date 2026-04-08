@@ -30,3 +30,4 @@ mono_crash.*
 
 # Misc (Root only)
 /*.dll.claude.json
+.claude.json

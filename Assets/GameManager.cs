@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     [Header("犬の永続ステータス")]
     public float DogEnergy = 0.6f;        // 元気 (0.0 - 1.0)
     public float DogHunger = 0.0f;        // 空腹 (0.0 - 1.0)
-    public float DogProficiency = 0.0f;   // おすわり熟練度 (0.0 - 100.0)
+    public float DogProficiency = 0.0f;   // おすわり熟練度 (0.0 - 1.0)
+    public float intimacy = 0.0f;        // 親密度 (0.0 - 1.0)
     
     // セッション（起動中）の練習回数
     public int PracticeCountInSession = 0;
