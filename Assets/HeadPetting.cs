@@ -1,4 +1,5 @@
 using UnityEngine;
+using Oculus.Haptics;
 
 public class HeadPetting : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class HeadPetting : MonoBehaviour
     private Coroutine _endDelayCoroutine;
     // 撫で開始時刻
     private float _pettingStartTime;
+    // HapticClipPlayerのインスタンス 撫でるのに使う
+    private HapticClipPlayer player;
+    public HapticClip clip; // Unity Editorで設定するためにpublicにする
 
     //　犬の頭のコライダー
     [SerializeField] private Collider headCollider;
@@ -24,6 +28,11 @@ public class HeadPetting : MonoBehaviour
 
     private Transform left;
     private Transform right;
+
+    // 初期化
+    void Awake(){
+        player = new HapticClipPlayer(clip);
+    }
 
     void Start()
     {
@@ -158,6 +167,8 @@ public class HeadPetting : MonoBehaviour
             if (_animator != null)
             {
                 _animator.SetTrigger("PatHeadTrigger");
+                // 振動再生
+                player.Play(Controller.Both);
                 Debug.Log("🐕 PatHeadアニメーション再生！");
             }
             _isPatting = true;

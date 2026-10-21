@@ -707,10 +707,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61285023ddee4471ca11f9cf9555b216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headPoint: {fileID: 9222311385374444970}
-  leftInteractions: {fileID: 0}
-  rightInteractions: {fileID: 0}
+  clip: {fileID: 2460798210113038985, guid: 3f2a0608cb9874e8fbf58979a318594f, type: 3}
   headCollider: {fileID: 1677243859885152502}
+  PetStartDelay: 0.5
+  PetEndDelay: 1
 --- !u!1 &3182816445077644002
 GameObject:
   m_ObjectHideFlags: 0
