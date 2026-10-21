@@ -16,6 +16,8 @@ public class HandTouchDetector : MonoBehaviour
     private Coroutine _endDelayCoroutine;
     // 撫でてるかどうかのフラグ
     private bool _isPatting = false;
+    // 撫で開始時刻
+    private float _pettingStartTime;
 
     void Start()
     {
@@ -122,12 +124,13 @@ public class HandTouchDetector : MonoBehaviour
             _animator.Play("PatChest"); // 胸を撫でる
             Debug.Log("🐕 PatChestアニメーション再生！");
             
-            // 10秒タイマー開始
+            // 3秒タイマー開始
             if (_patTimerCoroutine != null)
                 StopCoroutine(_patTimerCoroutine);
             
             _patTimerCoroutine = StartCoroutine(PatTimer());
             _isPatting = true;
+            _pettingStartTime = Time.time;
         }
         
         _startDelayCoroutine = null;
@@ -140,7 +143,15 @@ public class HandTouchDetector : MonoBehaviour
         // 1秒後、まだ離れたままなら終了処理
         if (!_isTouching)
         {
+            // 撫でていた時間を計算
+            float pettingDuration = 0f;
+            if (_isPatting)
+            {
+                pettingDuration = Time.time - _pettingStartTime;
+            }
+            
             Debug.Log("🐕 1秒経過！撫で終了処理開始");
+            Debug.Log($"🐕 撫でていた時間: {pettingDuration:F2}秒");
             _isPatting = false;
             
             // タイマー停止
@@ -176,12 +187,13 @@ public class HandTouchDetector : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         
-        // 10秒後、まだ撫でていたらトリガー発火
+        // 3秒後、まだ撫でていたらトリガー発火
         if (_isPatting && _animator != null)
         {
+            // 寝転がる
             _animator.SetTrigger("PatLieTrigger");
             //ここに右撫でてる時と左撫でてる時の処理を書く
-            Debug.Log("🐕 10秒経過！PatLieトリガー発火！");
+            Debug.Log("🐕 3秒経過！PatLieトリガー発火！");
         }
     }
 }
