@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(do if ! grep -q \"Root\" \"$f\")",
-      "Bash(then echo \"NO Root: $f\")"
+      "Bash(then echo \"NO Root: $f\")",
+      "Bash(python3 *)",
+      "Bash(touch /Users/motojisaki/AR-test/corgi_anim_fix_pending)",
+      "Bash(osascript -e 'tell application \"Unity\" to activate')"
     ],
     "deny": [],
     "ask": []
